@@ -54,7 +54,7 @@ var HeroService = (function () {
     };
     HeroService.prototype.create = function (name) {
         return this.http
-            .post(this.heroesUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .post(this.heroesUrl, { company: { name: name, status: 'ENA' } }, { headers: this.headers })
             .toPromise()
             .then(function (res) { return res.json().data; })
             .catch(this.handleError);

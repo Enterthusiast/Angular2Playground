@@ -6,7 +6,7 @@ var hero_detail_component_1 = require('./hero-detail.component');
 var appRoutes = [
     {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: 'dashboard',
         pathMatch: 'full'
     },
     {
