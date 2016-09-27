@@ -1,3 +1,4 @@
+"use strict";
 // Observable class extensions
 require('rxjs/add/observable/of');
 require('rxjs/add/observable/throw');

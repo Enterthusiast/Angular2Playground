@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -26,7 +27,7 @@ var HeroService = (function () {
             .then(function (response) {
             var heroes = response.json()._embedded.companies;
             heroes.forEach(function (hero) {
-                //hero.id = hero.uuid;
+                hero.id = hero.uuid;
             });
             return heroes;
         })
@@ -61,16 +62,16 @@ var HeroService = (function () {
     HeroService.prototype.update = function (hero) {
         var url = this.heroesUrl + "/" + hero.id;
         // todo don't modify the hero object
-        //delete hero._embedded;
-        //delete hero._links;
-        //delete hero.id;
-        //delete hero.uuid;
-        //delete hero.slug;
-        //delete hero.media_url;
-        //delete hero.updated_at;
-        //delete hero.updated_by;
-        //delete hero.created_at;
-        //delete hero.created_by;
+        delete hero._embedded;
+        delete hero._links;
+        delete hero.id;
+        delete hero.uuid;
+        delete hero.slug;
+        delete hero.media_url;
+        delete hero.updated_at;
+        delete hero.updated_by;
+        delete hero.created_at;
+        delete hero.created_by;
         var postHero = hero;
         return this.http
             .put(url, { company: hero }, { headers: this.headers })
@@ -87,7 +88,7 @@ var HeroService = (function () {
         __metadata('design:paramtypes', [http_1.Http])
     ], HeroService);
     return HeroService;
-})();
+}());
 exports.HeroService = HeroService;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

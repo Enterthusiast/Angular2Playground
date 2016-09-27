@@ -23,7 +23,7 @@ export class HeroService {
                .then(function(response) {
                    let heroes = response.json()._embedded.companies;
                    heroes.forEach((hero: Hero) => {
-                        //hero.id = hero.uuid;
+                        hero.id = hero.uuid;
                    });
                    return heroes as Hero[];
                })
@@ -43,7 +43,7 @@ export class HeroService {
     //           .then(heroes => heroes.find(hero => hero.id === id));
   }
 
-  delete(id: number): Promise<void> {
+  delete(id: string): Promise<void> {
     let url = `${this.heroesUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
@@ -62,16 +62,16 @@ export class HeroService {
   update(hero: Hero): Promise<Hero> {
     const url = `${this.heroesUrl}/${hero.id}`;
       // todo don't modify the hero object
-      //delete hero._embedded;
-      //delete hero._links;
-      //delete hero.id;
-      //delete hero.uuid;
-      //delete hero.slug;
-      //delete hero.media_url;
-      //delete hero.updated_at;
-      //delete hero.updated_by;
-      //delete hero.created_at;
-      //delete hero.created_by;
+      delete hero._embedded;
+      delete hero._links;
+      delete hero.id;
+      delete hero.uuid;
+      delete hero.slug;
+      delete hero.media_url;
+      delete hero.updated_at;
+      delete hero.updated_by;
+      delete hero.created_at;
+      delete hero.created_by;
       let postHero = hero;
 
     return this.http

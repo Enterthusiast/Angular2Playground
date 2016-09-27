@@ -1,6 +1,16 @@
 export class Hero {
-  id: number;
+  id: string;
   name: string;
+
+  uuid: string;
+  _embedded: string;
+  _links: string;
+  slug: string;
+  media_url: string;
+  updated_at: string;
+  updated_by: string;
+  created_at: string;
+  created_by: string;
 }
 
 
