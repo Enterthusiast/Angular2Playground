@@ -15,12 +15,17 @@ var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 // import { InMemoryDataService }  from './in-memory-data.service';
 var app_component_1 = require('./app.component');
+var app_routing_1 = require('./app.routing');
 var dashboard_component_1 = require('./dashboard.component');
 var heroes_component_1 = require('./heroes.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var hero_service_1 = require('./hero.service');
 var hero_search_component_1 = require('./hero-search.component');
-var app_routing_1 = require('./app.routing');
+var companies_dashboard_component_1 = require('./companies/companies-dashboard.component');
+var companies_component_1 = require('./companies/companies.component');
+var company_detail_component_1 = require('./companies/company-detail.component');
+var company_service_1 = require('./companies/company.service');
+var company_search_component_1 = require('./companies/company-search.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,10 +43,15 @@ var AppModule = (function () {
                 dashboard_component_1.DashboardComponent,
                 hero_detail_component_1.HeroDetailComponent,
                 heroes_component_1.HeroesComponent,
-                hero_search_component_1.HeroSearchComponent
+                hero_search_component_1.HeroSearchComponent,
+                companies_dashboard_component_1.CompaniesDashboardComponent,
+                company_detail_component_1.CompanyDetailComponent,
+                companies_component_1.CompaniesComponent,
+                company_search_component_1.CompanySearchComponent
             ],
             providers: [
                 hero_service_1.HeroService,
+                company_service_1.CompanyService,
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

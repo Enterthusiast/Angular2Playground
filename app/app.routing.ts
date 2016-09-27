@@ -4,17 +4,22 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent }  from './dashboard.component';
 import { HeroesComponent }     from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
+import { CompaniesDashboardComponent }  from './companies/companies-dashboard.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: '/dashboard',
     pathMatch: 'full'
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: CompaniesDashboardComponent
   },
+  // {
+  //   path: 'companies-dashboard',
+  //   component: CompaniesDashboardComponent
+  // },
   {
     path: 'detail/:id',
     component: HeroDetailComponent

@@ -1,0 +1,29 @@
+<h2>My Companies</h2>
+<div>
+  <label>Company name:</label> <input #companyName />
+  <button (click)="add(companyName.value); companyName.value=''">
+    Add
+  </button>
+</div>
+<ul class="companies">
+  <li *ngFor="let company of companies" (click)="onSelect(company)"
+      [class.selected]="company === selectedCompany">
+    <span class="badge">{{company.id}}</span>
+    <span>{{company.name}}</span>
+    <button class="delete"
+      (click)="delete(company); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedCompany">
+  <h2>
+    {{selectedCompany.name | uppercase}} is my company
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+
+
+<!-- 
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { AppConfig } from './config';
+import { Config } from './config';
 import { Hero } from './hero';
 
 @Injectable()
@@ -11,9 +11,9 @@ export class HeroService {
 
   private headers = new Headers({
     'Content-Type': 'application/json'
-    , 'Authorization': 'Basic ' + btoa(AppConfig.loginAndPassword)
+    , 'Authorization': 'Basic ' + btoa(Config.loginAndPassword)
   });
-  private heroesUrl = 'http://dev-api.origami-company.avengersleague.com/companies'; // 'app/heroes';  // URL to web api
+  private heroesUrl = Config.api.companies; // 'app/heroes';  // URL to web api
 
   constructor(private http: Http) { }
 

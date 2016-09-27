@@ -1,0 +1,16 @@
+<h3>Recently edited companies</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let company of companies" (click)="gotoDetail(company)" class="col-1-4">
+    <div class="module company">
+      <h4>{{company.name}}</h4>
+    </div>
+  </div>
+</div>
+<company-search></company-search>
+
+
+<!-- 
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

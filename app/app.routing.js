@@ -1,18 +1,22 @@
 "use strict";
 var router_1 = require('@angular/router');
-var dashboard_component_1 = require('./dashboard.component');
 var heroes_component_1 = require('./heroes.component');
 var hero_detail_component_1 = require('./hero-detail.component');
+var companies_dashboard_component_1 = require('./companies/companies-dashboard.component');
 var appRoutes = [
     {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: '/dashboard',
         pathMatch: 'full'
     },
     {
         path: 'dashboard',
-        component: dashboard_component_1.DashboardComponent
+        component: companies_dashboard_component_1.CompaniesDashboardComponent
     },
+    // {
+    //   path: 'companies-dashboard',
+    //   component: CompaniesDashboardComponent
+    // },
     {
         path: 'detail/:id',
         component: hero_detail_component_1.HeroDetailComponent
