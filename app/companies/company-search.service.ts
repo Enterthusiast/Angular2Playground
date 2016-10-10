@@ -2,7 +2,7 @@ import { Injectable }     from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 
-import { Config } from '../config';
+import { privateConfig } from '../app.private-config';
 
 import { Company }           from './company';
 
@@ -11,9 +11,9 @@ export class CompanySearchService {
 
   private headers = new Headers({
     'Content-Type': 'application/json'
-    , 'Authorization': 'Basic ' + btoa(Config.loginAndPassword)
+    , 'Authorization': 'Basic ' + btoa(privateConfig.loginAndPassword)
   });
-  private companiesUrl = Config.api.companies; // 'app/companies';  // URL to web api
+  private companiesUrl = privateConfig.api.companies; // 'app/companies';  // URL to web api
 
   constructor(private http: Http) {}
 

@@ -10,15 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var config_1 = require('../config');
+var app_private_config_1 = require('../app.private-config');
 var CompanySearchService = (function () {
     function CompanySearchService(http) {
         this.http = http;
         this.headers = new http_1.Headers({
             'Content-Type': 'application/json',
-            'Authorization': 'Basic ' + btoa(config_1.Config.loginAndPassword)
+            'Authorization': 'Basic ' + btoa(app_private_config_1.privateConfig.loginAndPassword)
         });
-        this.companiesUrl = config_1.Config.api.companies; // 'app/companies';  // URL to web api
+        this.companiesUrl = app_private_config_1.privateConfig.api.companies; // 'app/companies';  // URL to web api
     }
     CompanySearchService.prototype.search = function (term) {
         return this.http.get(this.companiesUrl + '?name=' + term, { headers: this.headers })

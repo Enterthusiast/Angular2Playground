@@ -16,10 +16,10 @@ const appRoutes: Routes = [
     path: 'dashboard',
     component: CompaniesDashboardComponent
   },
-  // {
-  //   path: 'companies-dashboard',
-  //   component: CompaniesDashboardComponent
-  // },
+  {
+     path: 'companies-dashboard',
+     component: CompaniesDashboardComponent
+  },
   {
     path: 'detail/:id',
     component: HeroDetailComponent

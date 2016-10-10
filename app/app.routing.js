@@ -13,10 +13,10 @@ var appRoutes = [
         path: 'dashboard',
         component: companies_dashboard_component_1.CompaniesDashboardComponent
     },
-    // {
-    //   path: 'companies-dashboard',
-    //   component: CompaniesDashboardComponent
-    // },
+    {
+        path: 'companies-dashboard',
+        component: companies_dashboard_component_1.CompaniesDashboardComponent
+    },
     {
         path: 'detail/:id',
         component: hero_detail_component_1.HeroDetailComponent

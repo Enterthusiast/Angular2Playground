@@ -3,6 +3,6 @@
 /npm-debug.log
 /.idea
 
-/app/config.js
-/app/config.ts
-/app/config.js.map
+/app/app.private-config.js
+/app/app.private-config.ts
+/app/app.private-config.js.map

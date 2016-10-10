@@ -11,15 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
-var config_1 = require('./config');
+var app_private_config_1 = require('./app.private-config');
 var HeroService = (function () {
     function HeroService(http) {
         this.http = http;
         this.headers = new http_1.Headers({
             'Content-Type': 'application/json',
-            'Authorization': 'Basic ' + btoa(config_1.Config.loginAndPassword)
+            'Authorization': 'Basic ' + btoa(app_private_config_1.privateConfig.loginAndPassword)
         });
-        this.heroesUrl = config_1.Config.api.companies; // 'app/heroes';  // URL to web api
+        this.heroesUrl = app_private_config_1.privateConfig.api.companies; // 'app/heroes';  // URL to web api
     }
     HeroService.prototype.getHeroes = function () {
         return this.http.get(this.heroesUrl, { headers: this.headers })

@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Config } from './config';
+import { privateConfig } from './app.private-config';
 import { Hero } from './hero';
 
 @Injectable()
@@ -11,9 +11,9 @@ export class HeroService {
 
   private headers = new Headers({
     'Content-Type': 'application/json'
-    , 'Authorization': 'Basic ' + btoa(Config.loginAndPassword)
+    , 'Authorization': 'Basic ' + btoa(privateConfig.loginAndPassword)
   });
-  private heroesUrl = Config.api.companies; // 'app/heroes';  // URL to web api
+  private heroesUrl = privateConfig.api.companies; // 'app/heroes';  // URL to web api
 
   constructor(private http: Http) { }
 
